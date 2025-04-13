@@ -33,7 +33,7 @@ export default function Home() {
       setAnalysisResult(null); // Clear previous results
       
       try {
-        const response = await analyzeSymptoms(newTranscript, imageFile);
+        const response = await analyzeSymptoms(newTranscript, imageFile || undefined);
         
         if (response.error) {
           toast({
