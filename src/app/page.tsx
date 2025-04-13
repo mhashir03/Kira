@@ -10,12 +10,19 @@ import ResultCard from '../components/ResultCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { analyzeSymptoms } from '../api/gemini';
 import { AnalysisResult } from '../types';
+import { Upload } from "lucide-react"; // optional icon
+import { Input } from "@/components/ui/input"; // assuming you're using shadcn/ui or similar
+import ImageUploadCard from '../components/ImageUploadCard'; // assuming you have this component for image upload
+
+
 
 export default function Home() {
   const [transcript, setTranscript] = useState('');
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const { toast } = useToast();
+  // Add to component state:
+ const [imageFile, setImageFile] = useState<File | null>(null);
 
   const handleTranscriptReady = async (newTranscript: string) => {
     setTranscript(newTranscript);
@@ -26,7 +33,7 @@ export default function Home() {
       setAnalysisResult(null); // Clear previous results
       
       try {
-        const response = await analyzeSymptoms(newTranscript);
+        const response = await analyzeSymptoms(newTranscript, imageFile);
         
         if (response.error) {
           toast({
@@ -68,6 +75,9 @@ export default function Home() {
       <Header />
       
       <main className="flex-1 container mx-auto px-4 py-8 relative z-10">
+      
+    <div className="mb-6">
+      </div>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-kira-gradient3 to-kira-purple">
@@ -76,11 +86,14 @@ export default function Home() {
             <p className="text-gray-600 mb-8 max-w-md mx-auto">
               Press the microphone button and describe how you're feeling
             </p>
-            
             <div className="flex justify-center mb-10">
-              <MicrophoneButton onTranscriptReady={handleTranscriptReady} />
-            </div>
-          </div>
+            <MicrophoneButton onTranscriptReady={handleTranscriptReady} />
+         </div>
+
+        <div className="mb-12">
+        <ImageUploadCard onImageSelect={setImageFile} />
+        </div>
+        </div>
           
           {transcript && <SymptomCard transcript={transcript} />}
           
