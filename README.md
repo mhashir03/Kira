@@ -1,8 +1,9 @@
-# VoiceCheck 🩺
+# Kira 🩺
 
-VoiceCheck is an AI-powered medical triage application that combines voice recognition with Google's advanced Gemini AI to help users understand their symptoms and assess injuries. By leveraging Gemini's multimodal capabilities, VoiceCheck can analyze both verbal symptom descriptions and injury images to provide preliminary guidance.
+Kira is an AI-powered medical triage application that combines voice recognition with Google's advanced Gemini AI to help users understand their symptoms and assess potential health conditions. By leveraging speech recognition and AI analysis, Kira provides informative guidance on possible health concerns.
 
-![VoiceCheck Screenshot](https://via.placeholder.com/1200x600?text=VoiceCheck+Screenshot)
+![Kira Screenshot](<img width="738" alt="Screenshot 2025-04-13 at 10 42 44 AM" src="https://github.com/user-attachments/assets/2c781c7c-234f-4044-b806-d24d4b497cd5" />
+)
 
 ## 🌟 Key Features
 
@@ -15,52 +16,39 @@ VoiceCheck is an AI-powered medical triage application that combines voice recog
   - Appropriate medical specialists to consult
   - Medical disclaimers and guidance
 
-### Visual Injury Assessment
-- **Camera Integration**: Capture injury photos directly through the application
-- **Image Upload**: Submit existing injury photos for analysis
-- **Contextual Analysis**: Provide injury location and description for more accurate results
-- **Detailed Evaluation**:
-  - Injury description based on visual analysis
-  - Severity assessment (minor, moderate, severe)
-  - First aid recommendations
-  - Guidance on whether medical attention is needed
-  - Color-coded severity indicators for quick understanding
-
 ### User-Friendly Interface
-- **Tabbed Navigation**: Easy switching between voice and camera features
+- **Modern UI**: Clean, sleek design with intuitive controls
 - **Responsive Design**: Optimized experience across all devices
 - **Real-Time Feedback**: Clear status indicators during AI processing
-- **Professional Presentation**: Clean, medical-themed UI with intuitive controls
+- **Glassmorphism Design**: Beautiful, modern interface with gradient accents
 
 ## 🧠 Gemini AI Implementation
 
-VoiceCheck leverages the power of Google's Gemini AI through their latest API:
+Kira leverages the power of Google's Gemini AI through their latest API:
 
 ### Text Analysis
-- Uses the `gemini-2.0-flash` model for rapid symptom analysis
-- Structured prompting for consistent JSON responses
+- Uses Gemini's advanced models for rapid symptom analysis
+- Structured prompting for consistent responses
 - Custom prompt engineering for medically-relevant outputs
 
 ### Response Handling
-- Robust JSON parsing with fallback mechanisms
+- Robust parsing with fallback mechanisms
 - Error handling to ensure graceful degradation
 - Optimized response processing for structured data display
 
 ## 🛠️ Technology Stack
 
-- **Frontend**: React with TypeScript
-- **Build Tool**: Vite for lightning-fast development
-- **Styling**: Tailwind CSS with a custom medical theme
-- **Components**: ShadCN UI component library
-- **AI**: Google Gemini API for text and image analysis
-- **Media**: Web Camera API for device camera access
+- **Frontend**: Next.js with React and TypeScript
+- **Styling**: Tailwind CSS with custom theme
+- **Components**: Custom UI components with a medical theme
+- **AI**: Google Generative AI API for text analysis
 - **State Management**: React hooks and context
 
 ## 📋 Prerequisites
 
-- Node.js 16.x or higher
-- npm 7.x or higher (or yarn 1.22+)
-- A Google Gemini API key ([Get one here](https://ai.google.dev/))
+- Node.js 18.x or higher
+- npm 7.x or higher (or yarn/bun)
+- A Google Generative AI API key
 - Modern browser (Chrome, Firefox, Edge, Safari)
 
 ## 🚀 Getting Started
@@ -69,8 +57,8 @@ VoiceCheck leverages the power of Google's Gemini AI through their latest API:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mhashir03/VoiceCheck.git
-   cd VoiceCheck
+   git clone https://github.com/mhashir03/Kira.git
+   cd Kira
    ```
 
 2. Install dependencies:
@@ -78,13 +66,15 @@ VoiceCheck leverages the power of Google's Gemini AI through their latest API:
    npm install
    # or with yarn
    yarn install
+   # or with bun
+   bun install
    ```
 
 3. Configure your API key:
    - Create a `.env` file in the project root
    - Add your Gemini API key:
      ```
-     VITE_GEMINI_API_KEY=your_gemini_api_key_here
+     NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
      ```
 
 4. Start the development server:
@@ -92,10 +82,12 @@ VoiceCheck leverages the power of Google's Gemini AI through their latest API:
    npm run dev
    # or with yarn
    yarn dev
+   # or with bun
+   bun dev
    ```
 
 5. Open your browser and navigate to:
-   - [http://localhost:8080](http://localhost:8080) (default port)
+   - [http://localhost:3000](http://localhost:3000)
 
 ### Build for Production
 
@@ -103,9 +95,19 @@ VoiceCheck leverages the power of Google's Gemini AI through their latest API:
 npm run build
 # or with yarn
 yarn build
+# or with bun
+bun run build
 ```
 
-The built files will be in the `dist` directory, ready to be deployed to any static hosting service.
+To start the production server:
+
+```bash
+npm run start
+# or with yarn
+yarn start
+# or with bun
+bun run start
+```
 
 ## 📱 Usage Guide
 
@@ -123,11 +125,10 @@ The built files will be in the `dist` directory, ready to be deployed to any sta
 
 ## ⚠️ Important Notes
 
-- **Not a Medical Substitute**: VoiceCheck provides preliminary information only and is not a replacement for professional medical diagnosis or treatment
+- **Not a Medical Substitute**: Kira provides preliminary information only and is not a replacement for professional medical diagnosis or treatment
 - **Emergency Situations**: For severe or life-threatening conditions, call emergency services immediately
 - **Privacy**: All processing is done through secure API calls; no medical data is stored permanently
 - **Limitations**: AI analysis may not capture all nuances of complex medical conditions
-- **Results Variability**: Lighting conditions and image quality may affect the accuracy of injury assessments
 
 ## 🌐 Browser Compatibility
 
@@ -135,7 +136,7 @@ The built files will be in the `dist` directory, ready to be deployed to any sta
 - Firefox 90+
 - Safari 15+
 - Edge 90+
-- Mobile browsers with camera and microphone support
+- Mobile browsers with microphone support
 
 ## 📄 License
 
@@ -143,9 +144,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgements
 
-- [Google Gemini API](https://ai.google.dev/) for providing the powerful AI models
-- [ShadCN UI](https://ui.shadcn.com/) for the elegant component library
+- [Google Generative AI](https://ai.google.dev/) for providing the powerful AI models
+- [Next.js](https://nextjs.org/) for the React framework
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Vite](https://vitejs.dev/) for the lightning-fast build tool
 - [React](https://reactjs.org/) for the component-based UI library
-- The React community for their invaluable resources and support
