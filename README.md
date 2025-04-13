@@ -2,9 +2,6 @@
 
 Kira is an AI-powered medical triage application that combines voice recognition with Google's advanced Gemini AI to help users understand their symptoms and assess potential health conditions. By leveraging speech recognition and AI analysis, Kira provides informative guidance on possible health concerns.
 
-![Kira Screenshot](<img width="738" alt="Screenshot 2025-04-13 at 10 42 44 AM" src="https://github.com/user-attachments/assets/2c781c7c-234f-4044-b806-d24d4b497cd5" />
-)
-
 ## 🌟 Key Features
 
 ### Voice Symptom Analysis
